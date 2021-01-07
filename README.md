@@ -47,7 +47,7 @@ Subject C : 84%
 
 Subject D: 78%
 
-![alt text] (https://github.com/Atlaskz/Mental-State-Predictor/blob/main/chart.png)
+![alt text](https://github.com/Atlaskz/Mental-State-Predictor/blob/main/chart.png)
 
 
 ## Wrapping up
