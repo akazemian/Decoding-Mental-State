@@ -3,7 +3,7 @@
  
 ## Intoduction
 
-In my previous project [Bionic AI](), I mentioned my interest in designing a real time mental state prediction experiment. I have been inspired by the increasing collaboration between computer science experts and neuroscientists for transforming neurotechnology in ways that will revolutionize many industries. This collaboration can result in a new level of human-machine symbiosis with the goal of improving the lives of people suffering from various mental and muscle disorders as well as healthy individuals.
+In my previous project [Bionic AI](https://github.com/Atlaskz/Bionic-AI-Predicting-Grasp-and-Lift-Motions), I mentioned my interest in designing a real time mental state prediction experiment. I have been inspired by the increasing collaboration between computer science experts and neuroscientists for transforming neurotechnology in ways that will revolutionize many industries. This collaboration can result in a new level of human-machine symbiosis with the goal of improving the lives of people suffering from various mental and muscle disorders as well as healthy individuals.
 
 To do this, the first thing I needed was an EEG headset. I decided on a [muse 2 headband](https://choosemuse.com/muse-2/) because of the growing research community around using Muse devices for EEG data collection and analysis. My goal was to use the Muse headband to collect my own data by designing an experiment for mental state recognition. This would then allow me to predict mental state in real time.
 
