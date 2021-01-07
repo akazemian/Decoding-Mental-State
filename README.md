@@ -1,8 +1,6 @@
 # Mental-State-Predictor
-Predicting mental state using deep learning
-
-# Bionic AI
-
+## Predicting mental state using deep learning
+ 
 ## Intoduction
 
 In my previous project [Bionic AI](), I mentioned my interest in designing a real time mental state prediction experiment. I have been inspired by the increasing collaboration between computer science experts and neuroscientists for transforming neurotechnology in ways that will revolutionize many industries. This collaboration can result in a new level of human-machine symbiosis with the goal of improving the lives of people suffering from various mental and muscle disorders as well as healthy individuals.
