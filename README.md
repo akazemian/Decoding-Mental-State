@@ -56,7 +56,9 @@ Subject D: 78%
 
 ## Wrapping up
 
-I had a blast working on this problem as my first real data science project. If I decided to improve the accuracy, I would spend more time on signal processing to reduce the noise in the data. I would also try other deep learning algorithms and compare more models. I have a slight bias towards using deep learning for this problem due to its end to end optimization and the elimination of the feature engineering step. This is important since having to feature engineer the incoming data could increase prediction delay in real time. 
+The original study used feature engineering and traditional machine learning models for this classification task. They found that with 44 features and classical classifiers such as Bayesian Networks, Support Vector Machines and Random Forests, they could obtain an overall accuracy of around  87%. 
 
-Speaking of real time, I thought it would be very interesting to test the performance of the model for actual prediction. Hence, for my next project, I am hoping to use a muse EEG headset or a similar product for predicting sentiment from brain activity in real time.
+A score of 83%, with no extracted features and minimal processing seems like a great start to me. This also shows the potential of deep learning for decoding brain activity. As you might know, one of the limitations of deep learning models are the amount of data they need for training. And this dataset is very small compared to what’s used for computer vision projects where deep learning is having stellar performance. This is probably the main reason for not achieving an accuracy score of over 90%. Another reason could be the use of a commercial grade EEG headband as opposed to performing the experiments in a lab. However, as these headbands are becoming more popular for research purposes, it is important to design models that work well with them. For these reasons, I’m interested in using data augmentation and further hyper parameter tuning to observe the change in the overall accuracy of the model.
+
+Furthermore, as I mentioned at the beginning of the post, my original intention was to design my own experiment so I can use the Muse headband for predicting mental state in real time.  So staye tuned for part 2 of this project when I receive my muse headband in the mail. 
 
