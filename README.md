@@ -14,7 +14,7 @@ I ordered the headset around a month ago and expected it to be delivered within 
 The data was collected from 2 males and 2 females for 60 seconds. Each experiment was repeated twice for each of the 4 subjects. The Muse headband records the TP9, AF7, AF8 and TP10 EEG placements via dry electrodes. The figure below shows the locations of these electrodes. The mental states considered for the experiment included relaxed, concentrating, neutral. For the relaxed state, subjects listened to meditation low-tempo music and were asked to relax their muscles. For the neutral state, a similar test was carried out, but with no music. This test was done before the rest to prevent lasting effects of relaxation and concentration. Finally, for the concentration state, the subjects played a game in which they had to find a ball that was hidden under one of three rotating cups. To learn more about the experiment, you can check out the [original study](https://www.researchgate.net/publication/328615252_A_Study_on_Mental_State_Classification_using_EEG-based_Brain-Machine_Interface).
 
 
-![alt text](https://github.com/Atlaskz/Bionic-AI-Predicting-Grasp-and-Lift-Motions/blob/main/Images/motions.png?style=centerme)
+![alt text]
 
 Even though the dataset was small, I did not use any data augmentation techniques. I planned on doing so if the results achieved without augmentation were not promising. As you will see soon, the results were pretty good even without data augmentation. However, in many studies, augmentation is proven to increase accuracy and stability when done properly.
 
@@ -47,7 +47,7 @@ Subject C : 84%
 
 Subject D: 78%
 
-![alt text](https://github.com/Atlaskz/Bionic-AI-Predicting-Grasp-and-Lift-Motions/blob/main/Images/motions.png?style=centerme)
+![alt text]
 
 
 ## Wrapping up
