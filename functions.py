@@ -24,8 +24,13 @@ from tensorflow.keras.layers import Flatten
 from tensorflow.keras.layers import Dense
 from tensorflow.keras.layers import Dropout
 
+
+
 def getData(testSubject, testTrial, test=False):
-  
+  """ description: returns training and test data given the subject and trial chosen as the test set
+  parameters: testSubject(DataFrame), testTrial(DataFrame), test(boolean)
+  output: 2 dimensional array of data for the training (test=False) or test set (test=True) """
+
   files = []
   for f in os.listdir('/content/drive/MyDrive/Colab Notebooks/Muse Project/Original Data/Muse/'):
     files.append(f)
@@ -84,6 +89,11 @@ def getData(testSubject, testTrial, test=False):
 
 
 def processData(data,states,sfreq=200,lowF=4,highF=30,Normalize=True,window = 64):
+  """ description: processes the data by filtering and windowing
+  parameters: data(DataFrame),states(DataFrame),sfreq(int) = sampling frequency,lowF(int)=lower band frequency ,highF(int)=upper band frequency ,
+  Normalize(boolean), window(int) = window size
+  output: 3 dimensional array of processed data and 2 dimensional array of the corresponding mental states """
+  
   electrodes = 4
   for i in range(len(data)):
     #filter data:
@@ -116,6 +126,9 @@ def processData(data,states,sfreq=200,lowF=4,highF=30,Normalize=True,window = 64
   return allData, allStates
 
 def getModel():
+  """ description: Neural Net model consisting of 2 CNN layers and fully connected layers
+  parameters: -
+  output: the model """
   # Initialising the CNN
   classifier = Sequential()
 
@@ -126,7 +139,7 @@ def getModel():
   classifier.add(Dropout(0.5))
   classifier.add(MaxPooling1D(pool_size = (2)))
   classifier.add(Flatten())
-  # Full connection
+  # Full connection (hidden layers)
   classifier.add(Dense(512, activation = 'relu'))
   classifier.add(Dense(256, activation = 'relu'))
   classifier.add(Dense(64, activation = 'relu'))
