@@ -20,8 +20,8 @@ from tensorflow.keras.layers import Dropout
 
 def getData(testSubject, testTrial, test=False):
   """ description: returns training and test data given the subject and trial chosen as the test set
-  parameters: testSubject(DataFrame), testTrial(DataFrame), test(boolean)
-  output: 2 dimensional array of data for the training (test=False) or test set (test=True) """
+  parameters: testSubject(string), testTrial(int), test(boolean)
+  output: List of DataFrames for the training (test=False) or test (test=True) trials and states """
 
   files = []
   for f in os.listdir('/content/drive/MyDrive/Colab Notebooks/Muse Project/Original Data/Muse/'):
@@ -82,7 +82,7 @@ def getData(testSubject, testTrial, test=False):
 
 def processData(data,states,sfreq=200,lowF=4,highF=30,Normalize=True,window = 64):
   """ description: processes the data by filtering and windowing
-  parameters: data(DataFrame),states(DataFrame),sfreq(int) = sampling frequency,lowF(int)=lower band frequency ,highF(int)=upper band frequency ,
+  parameters: data(List),states(List),sfreq(int) = sampling frequency,lowF(int)=lower band frequency ,highF(int)=upper band frequency ,
   Normalize(boolean), window(int) = window size
   output: 3 dimensional array of processed data and 2 dimensional array of the corresponding mental states """
   
@@ -118,12 +118,11 @@ def processData(data,states,sfreq=200,lowF=4,highF=30,Normalize=True,window = 64
   return allData, allStates
 
 def getModel():
-  """ description: Neural Net model consisting of 2 CNN layers and fully connected layers
+  """ description: Neural Net model consisting of CNN layers and fully connected layers
   parameters: -
   output: the model """
-  # Initialising the CNN
+  # Initialising the model
   classifier = Sequential()
-
   # Convolutions
   classifier.add(Convolution1D(64, 3, 1, input_shape = (64, 4), activation = 'relu'))
   classifier.add(Convolution1D(64, 3, 1, activation = 'relu'))
