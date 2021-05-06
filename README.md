@@ -1,4 +1,3 @@
-# Mental-State-Decoder
 ## Predicting mental state using deep learning
  
 ## Intoduction
