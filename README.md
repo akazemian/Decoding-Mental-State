@@ -23,7 +23,7 @@ To prepare the data for traning, a band-pass filter of 4-30 Hz was used to filte
 
 ## Deep Learning Model
 
-This project also aims to study the effect of network depth (convolutions as well as fully connected layers) on model performance. This [paper](https://iopscience.iop.org/article/10.1088/1741-2552/ab260c) summarizes 154 studies on Deep Learning for EEG Decoding, from 2010 to 2018. Based on this paper, the majority of studies found that a shallower network of fully connected layers performed better. After a few rounds of parameter tuning, 3 fully connected layers were chosen. As for the convolutions, it was shown that shallower models outperformed the deeper ones. Hence, 2 convolutions were chosen to start with.
+This project also aims to study the effect of network depth (convolutions as well as fully connected layers) on model performance. This [paper](https://iopscience.iop.org/article/10.1088/1741-2552/ab260c) summarizes 154 studies focused on using Deep Learning for EEG Decoding. Based on the results, the majority of studies found that a shallower network of fully connected layers performed better than deeper networks. Hence, the few models were trained using 1-3 fully connected layers. After parameter tuning, 3 fully connected layers were chosen. As for the convolutions, it was shown by the studies that shallower models outperformed the deeper ones. Hence, 2 convolutions were chosen to start with.
 
 ## Training
 
