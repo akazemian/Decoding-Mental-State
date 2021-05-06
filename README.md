@@ -31,7 +31,7 @@ To test the performance of the model for each subject, each subject's trial was 
 
 ## Results
 
-The graph below shows the average of the AUC scores of the 2 trials for each subject (for subject b, the score corresponds to the first trial only). The total average AUC score is 83%. The average score for each subject is as follows:
+The graph below shows the mean AUC score from each subjects' trials (for subject b, the score corresponds to the first trial only). The total average AUC score was found to be 83%. The mean AUC score for each subject is as follows:
 
 Subject A : 91%
 
@@ -47,7 +47,7 @@ Subject D: 78%
 
 ## Wrapping up
 
-The original study used feature engineering and classical machine learning models for this task. They found that with 44 features and classical classifiers such as Bayesian Networks, Support Vector Machines and Random Forests, they could obtain an overall accuracy of around  87%. 
+The original study used feature engineering and classical machine learning models for this task. They found that with 44 features and classical classifiers such as Bayesian Networks, Support Vector Machines and Random Forests, an overall accuracy of around  87% was attained. 
 
-In this project, a score of 83% was achieved with no feature extraction and minimal processing. This score would likely increase with further hyperparameter tuning. The aim of this project was to demonstrate the performance of deep learning for decoding brain activity. One of the known limitations of deep learning is the amount of data required for training. It is only expected to achieve a lower accuracy with limited data. On the other hand, commercial grade EEG headbands are not as reliable as 128 channel headsets used in research labs. However, as more neurtech startups emerge, commercial eeg devices are gaining popularity amongst researchers due to their ease of use and affordability. Hence, there is growing interest in creating models that work well with these devices.
+In this project, a score of 83% was achieved with no feature extraction and minimal processing. This score would likely increase with further hyperparameter tuning (including the optimizer, learning rate, batchsize, number of epochs). The aim of this project was to simply demonstrate the performance of deep learning for decoding brain activity. One of the known limitations of deep learning is the amount of data required for training. It is only expected to achieve a lower accuracy with limited data. On the other hand, commercial grade EEG headbands are not as reliable as 128 channel headsets used in research labs. However, as more neurotech startups emerge, commercial EEG devices are gaining popularity amongst researchers due to their ease of use and affordability. Hence, there is growing interest in creating models that work well with these devices.
 
