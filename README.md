@@ -44,7 +44,7 @@ Subject D: 78%
   <img src="https://github.com/Atlaskz/Mental-State-Predictor/blob/main/chart.png">
 </p>
 
-## Wrapping up
+## Discussion
 
 The original study used feature engineering and classical machine learning models for this task. They found that with 44 features and classical classifiers such as Bayesian Networks, Support Vector Machines and Random Forests, an overall accuracy of around  87% was attained. 
 
