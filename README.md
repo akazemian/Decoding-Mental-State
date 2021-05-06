@@ -19,7 +19,7 @@ Although data augmentation was not used in this project, it is proven to increas
 
 ## Data Processing:
 
-To prepare the data for traning, a band-pass filter of 4-30 Hz was used to filter out the delta (1–4 Hz) and gamma (31–40 Hz) bands while keeping theta (5–8 Hz), alpha (9–13 Hz), lower beta (14–16 Hz), and higher beta (17–30 Hz). Delta and gamma bands were excluded since their activity types are not relevant in this experiment. Delta frequencies are responsible for deep sleep brain activity and gamma frequencies are responsible for high level information processing tasks.  I A window size of 64 was chosen to make use of previous timestamps as features for each row.  
+To prepare the data for traning, a band-pass filter of 4-30 Hz was used to filter out the delta (1–4 Hz) and gamma (31–40 Hz) bands while keeping theta (5–8 Hz), alpha (9–13 Hz), lower beta (14–16 Hz), and higher beta (17–30 Hz). Delta and gamma bands were excluded since their activity types are not relevant in this experiment. Delta frequencies are responsible for deep sleep brain activity and gamma frequencies are responsible for high level information processing tasks. A window size of 64 was chosen to make use of previous timestamps as features for each row.   
 
 ## Deep Learning Model
 
