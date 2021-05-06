@@ -3,7 +3,9 @@
  
 ## Intoduction
 
-This project aims to predict a subject's mental state (focused, relaxed, neutral) by training a model on data collected using a [commercial EEG headband](https://choosemuse.com/shop/) during an experiment. The [dataset](https://www.kaggle.com/birdy654/eeg-brainwave-dataset-mental-state) used was uploaded to kaggle by Jordan Bird. The results of their study is summarized in this [paper](https://ieeexplore.ieee.org/abstract/document/8710576), which aims to classify mental states using feature selection techniques and classical classifiers such as Bayesian Networks, Support Vector Machines and Random Forests, obtaning an overall accuracy over 87%. In this post, I use 1d convolutions to compare the performance of deep learning with such classifical models. I attain an average accuracy of 84% without much processing or using new features.
+This project aims to predict a subject's mental state (focused, relaxed, neutral) by training a model on data collected using a [commercial EEG headband](https://choosemuse.com/shop/) during an experiment. The [dataset](https://www.kaggle.com/birdy654/eeg-brainwave-dataset-mental-state) used was uploaded to kaggle by Jordan Bird. The results of their study is summarized in this [paper](https://ieeexplore.ieee.org/abstract/document/8710576), which aims to classify mental states using feature selection techniques and classical classifiers such as Bayesian Networks, Support Vector Machines and Random Forests, obtaning an overall accuracy over 87%. 
+
+This project aims to compare the performance of deep learning with such classifical models. An average accuracy of 83% is achieved using a simple CNN model.
 
 ## The Data
 
