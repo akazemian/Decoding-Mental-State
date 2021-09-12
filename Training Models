@@ -1,1 +1,23 @@
-{"nbformat":4,"nbformat_minor":0,"metadata":{"colab":{"name":"Training Models","provenance":[],"collapsed_sections":[],"toc_visible":true,"machine_shape":"hm","mount_file_id":"1bOHn0qRz4m8hnquYKpi0YZ93GNazXf7e","authorship_tag":"ABX9TyNsFjuvsWNghfk9lRj7NntA"},"kernelspec":{"name":"python3","display_name":"Python 3"},"accelerator":"GPU"},"cells":[{"cell_type":"code","metadata":{"id":"t4wv9cgGDUQQ"},"source":["#import shutil\n","#shutil.unpack_archive('/content/drive/MyDrive/Colab Notebooks/Muse Project/Original Data/Muse.tar.gz','/content/drive/MyDrive/Colab Notebooks/Muse Project/Original Data/')"],"execution_count":null,"outputs":[]},{"cell_type":"code","metadata":{"id":"Iv5_DRMsGZjx","colab":{"base_uri":"https://localhost:8080/"},"executionInfo":{"status":"ok","timestamp":1610045778840,"user_tz":480,"elapsed":7731,"user":{"displayName":"Atlas Kazemian","photoUrl":"","userId":"14682319415508435649"}},"outputId":"4c5a87ee-dfcd-4814-954b-a5e0a093a634"},"source":["!pip install mne\n","\n","import sys\n","sys.path.append('/content/drive/MyDrive/Colab Notebooks/Muse Project/')\n","from functions import *"],"execution_count":1,"outputs":[{"output_type":"stream","text":["Requirement already satisfied: mne in /usr/local/lib/python3.6/dist-packages (0.22.0)\n","Requirement already satisfied: scipy>=0.17.1 in /usr/local/lib/python3.6/dist-packages (from mne) (1.4.1)\n","Requirement already satisfied: numpy>=1.11.3 in /usr/local/lib/python3.6/dist-packages (from mne) (1.19.4)\n"],"name":"stdout"}]},{"cell_type":"markdown","metadata":{"id":"6cTMYwsi6Zu8"},"source":["## Training Models"]},{"cell_type":"code","metadata":{"id":"HPLE488cHuqJ"},"source":["Trials = [('a',1),('a',2),('b',1),('c',1),('c',2),('d',1),('d',2)]\n","AUCS = {}\n","for Trial in Trials:\n","\n","  trainData, trainStates, trainList = getData(testSubject=Trial[0], testTrial = Trial[1], test=False)\n","  testData, testStates, testList = getData(testSubject=Trial[0], testTrial = Trial[1], test=True)\n","\n","  print(f'test list: {testList}')\n","\n","  trainData, trainStates = processData(trainData, trainStates)\n","  testData, testStates = processData(testData, testStates)\n","\n","  model = getModel()\n","  \n","  model.fit(trainData, trainStates, batch_size=32, epochs=200, verbose=1)\n","  model.save(f'/content/drive/MyDrive/Colab Notebooks/Muse Project/model-test-{Trial[0]}{Trial[1]}')\n","  \n","  preds = model.predict(testData, verbose=0)\n","  \n","  print(f'auc = {auc(testStates, preds)}')\n","  AUCS[f'{Trial[0]}{Trial[1]}'] = auc(testStates, preds)\n","\n","pd.DataFrame.from_dict(AUCS, orient='index', columns=['AUC']).to_csv('/content/drive/MyDrive/Colab Notebooks/Muse Project/',index=False)\n","\n"],"execution_count":null,"outputs":[]}]}
+Trials = [('a',1),('a',2),('b',1),('c',1),('c',2),('d',1),('d',2)]
+AUCS = {}
+for Trial in Trials:
+
+  trainData, trainStates, trainList = getData(testSubject=Trial[0], testTrial = Trial[1], test=False)
+  testData, testStates, testList = getData(testSubject=Trial[0], testTrial = Trial[1], test=True)
+
+  print(f'test list: {testList}')
+
+  trainData, trainStates = processData(trainData, trainStates)
+  testData, testStates = processData(testData, testStates)
+
+  model = getModel()
+  
+  model.fit(trainData, trainStates, batch_size=32, epochs=200, verbose=1)
+  model.save(f'/content/drive/MyDrive/Colab Notebooks/Muse Project/model-test-{Trial[0]}{Trial[1]}')
+  
+  preds = model.predict(testData, verbose=0)
+  
+  print(f'auc = {auc(testStates, preds)}')
+  AUCS[f'{Trial[0]}{Trial[1]}'] = auc(testStates, preds)
+
+pd.DataFrame.from_dict(AUCS, orient='index', columns=['AUC']).to_csv('/content/drive/MyDrive/Colab Notebooks/Muse Project/',index=False)
